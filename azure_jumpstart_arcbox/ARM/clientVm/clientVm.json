@@ -4,14 +4,14 @@
     "parameters": {
         "vmName": {
             "type": "string",
-            "defaultValue": "ArcBox-Client",
+            "defaultValue": "ArcBox-Dev-Client",
             "metadata": {
                 "description": "The name of your Virtual Machine"
             }
         },
         "capiArcDataClusterName": {
             "type": "string",
-            "defaultValue": "ArcBox-CAPI-Data",
+            "defaultValue": "Arc-CAPI-Data",
             "metadata": {
                 "description": "The name of the Cluster API workload cluster to be connected as an Azure Arc-enabled Kubernetes cluster (lowercase)"
             }
@@ -48,17 +48,31 @@
         },
         "virtualNetworkName": {
             "type": "string",
-            "defaultValue": "ArcBox-Vnet",
+            "defaultValue": "ArcDev-Vnet",
             "metadata": {
                 "description": "Name of the VNET"
             }
         },
+        "virtualNetworkAddressSpace": {
+            "type": "array",
+            "defaultValue": ["10.18.0.0/16"],
+            "metadata": {
+                "description": "Address space for the virtual network"
+            }
+        },
         "subnetName": {
             "type": "string",
-            "defaultValue": "ArcBox-Subnet",
+            "defaultValue": "ArcDev-Subnet",
             "metadata": {
                 "description": "Name of the subnet in the virtual network"
             }
+        },
+        "subnetAddressPrefix": {
+            "type": "string",
+            "defaultValue": "10.18.1.0/24",
+                "metadata": {
+                    "description": "Address prefix for the subnet"
+                    }
         },
         "resourceTags": {
             "type": "object",
